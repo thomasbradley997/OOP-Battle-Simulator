@@ -1,16 +1,14 @@
 import random
-from enemy import Enemy
 
-class Goblin(Enemy):
+class Enemy:
     """
-    This is our goblin blueprint 
+    This is our Enemy blueprint 
     
     Attributes:
         name: Awe, it has a name? How cute!
         health: The current health value 
         attack_power: How much health will be drained from opponent if hit
     """
-<<<<<<< Updated upstream
     def __init__(self, name):
         self.name = name
         self.health = 100
@@ -21,13 +19,10 @@ class Goblin(Enemy):
 
     def take_damage(self, damage):
         self.health -= damage
-        # TODO We should prevent the goblins health from going into the NEGATIVE
+        if self.health <= 0:
+            self.health = 0
+            return self.health 
         print(f"{self.name} takes {damage} damage. Health is now {self.health}.")
 
     def is_alive(self):
         return self.health > 0
-=======
-    def __init__(self, name, color):
-        super().__init__(name)
-        self.color = color
->>>>>>> Stashed changes

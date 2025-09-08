@@ -1,3 +1,8 @@
+<<<<<<< Updated upstream
+=======
+import random
+from enemy import Enemy
+>>>>>>> Stashed changes
 class Hero:
     """
     This is our hero blueprint.
@@ -19,10 +24,22 @@ class Hero:
     
 
     def strike(self):
+<<<<<<< Updated upstream
         # TODO Implement the hero's attack logic. It could be stronger or more consistent than a goblin's.
     
     def receive_damage(self, damage):
         # TODO Implement take_damage
         # TODO We should prevent health from going into the NEGATIVE
+=======
+        return random.randint(self.attack_power, 100)
+    hero_health = 0
+    def receive_damage(self, damage):
+        self.damage = self.strike(Enemy)
+        self.health -= self.damage
+        if self.health <= 0:
+            self.health = 0
+            return self.damage
+        print(f"{self.name} takes {damage} damage. Health is now {self.health}.")
+>>>>>>> Stashed changes
     
     #TODO define is_alive
